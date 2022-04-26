@@ -260,9 +260,9 @@
 // style console.log
 // console.log('%cmy name is hamza and my status is coder',
 // "color:orange;font-size:20px;background:blue")
-function Print(text) {
-    console.log(`%c ${text}`,"color:orange;font-size:20px;background:blue")
-}
+// function Print(text) {
+//     console.log(`%c ${text}`,"color:orange;font-size:20px;background:blue")
+// }
 // Print("hamza ")
 
 
@@ -311,9 +311,35 @@ function Print(text) {
 // Print(Avenger.intro())
 // Print(honda.airbag)
 
+// console.log(fetch("https://reqres.in/api/users"))
+// fetch("https://reqres.in/api/users")
+// .then(res => console.log(res))
+
+// fetch("https://reqres.in/api/users/5")
+//   .then((res) => {
+//       if (res.ok) {
+//           console.log("success")
+//       }else {
+//           console.log("error")
+//       }
+//   })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err))
 
 
-
+fetch("https://reqres.in/api/users",{
+    method: "POST",
+    headers:{
+        "content-type": "application/json"
+    },
+    body: JSON.stringify({
+        name:"user 1"
+    })
+}).then(res =>{
+    return res .json()
+})
+.then(data => console.log(data))
+.catch(err => console.log(err))
 
 
 
